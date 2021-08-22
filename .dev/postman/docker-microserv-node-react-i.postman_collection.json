@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "9c267049-48b6-4005-a0d5-7b1d0ff40a91",
+		"name": "docker-microserv-node-react-i",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "GET Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlPosts}}/posts",
+							"host": [
+								"{{baseUrlPosts}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"First Post\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlPosts}}/posts",
+							"host": [
+								"{{baseUrlPosts}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "posts node server\n",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "GET Comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Firts Comment\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlComments}}/posts/:id/comments",
+							"host": [
+								"{{baseUrlComments}}"
+							],
+							"path": [
+								"posts",
+								":id",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "bf99de81"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Comments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"First Post\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlComments}}/posts/:id/comments",
+							"host": [
+								"{{baseUrlComments}}"
+							],
+							"path": [
+								"posts",
+								":id",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "bf99de81"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "posts node server\n",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "dcc28066-e9b1-416f-aab7-ba3dde383915",
+			"key": "baseUrl",
+			"value": "localhost:",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}
